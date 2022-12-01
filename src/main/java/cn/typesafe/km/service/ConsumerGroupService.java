@@ -61,7 +61,6 @@ public class ConsumerGroupService {
         for (ConsumerGroupListing consumerGroupListing : consumerGroupListings) {
             String groupId = consumerGroupListing.groupId();
             ConsumerGroupDescription consumerGroupDescription = groups.get(groupId);
-            Node coordinator = consumerGroupDescription.coordinator();
             consumerGroupDescription.members()
                     .stream()
                     .map(s -> s.assignment().topicPartitions())
